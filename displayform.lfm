@@ -1,0 +1,38 @@
+object ViewForm: TViewForm
+  Left = 171
+  Height = 449
+  Top = 343
+  Width = 734
+  Caption = 'View'
+  ClientHeight = 449
+  ClientWidth = 734
+  OnCreate = FormCreate
+  OnMouseDown = FormMouseDown
+  OnMouseLeave = FormMouseLeave
+  OnMouseMove = FormMouseMove
+  OnMouseUp = FormMouseUp
+  OnResize = FormResize
+  ShowInTaskBar = stNever
+  LCLVersion = '1.0.4.0'
+  Visible = True
+  object PaintBox1: TPaintBox
+    Left = 0
+    Height = 449
+    Top = 0
+    Width = 734
+    Align = alClient
+    OnMouseDown = FormMouseDown
+    OnMouseMove = FormMouseMove
+    OnMouseUp = FormMouseUp
+    OnMouseLeave = FormMouseLeave
+    OnMouseWheelDown = PaintBox1MouseWheelDown
+    OnMouseWheelUp = PaintBox1MouseWheelUp
+    OnPaint = PaintBox1Paint
+  end
+  object Timer1: TTimer
+    Interval = 50
+    OnTimer = Timer1Timer
+    left = 671
+    top = 25
+  end
+end

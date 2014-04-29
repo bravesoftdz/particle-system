@@ -1,0 +1,286 @@
+object ParticleForm: TParticleForm
+  Left = 383
+  Height = 413
+  Top = 187
+  Width = 533
+  Align = alCustom
+  Caption = 'Particle settings'
+  ClientHeight = 413
+  ClientWidth = 533
+  OnCreate = FormCreate
+  LCLVersion = '1.2.2.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 413
+    Top = 0
+    Width = 533
+    ActivePage = TabSheet2
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Setup'
+      ClientHeight = 387
+      ClientWidth = 525
+      object EditCount: TEdit
+        Left = 312
+        Height = 21
+        Top = 232
+        Width = 80
+        TabOrder = 0
+        Text = '100'
+      end
+      object Label2: TLabel
+        Left = 312
+        Height = 13
+        Top = 200
+        Width = 73
+        Caption = 'Selection count'
+        ParentColor = False
+      end
+      object Cathegories: TTabControl
+        Left = 8
+        Height = 328
+        Top = 10
+        Width = 280
+        OnChange = CathegoriesChange
+        TabIndex = 0
+        Tabs.Strings = (
+          'Elements'
+          'Atomic particles'
+          'Planets'
+        )
+        TabOrder = 1
+        object ElementsList: TCheckListBox
+          Left = 2
+          Height = 305
+          Top = 21
+          Width = 276
+          Align = alClient
+          Items.Strings = (
+            'Hydrogen'
+            'Helium'
+          )
+          ItemHeight = 15
+          TabOrder = 1
+          Data = {
+            020000000000
+          }
+        end
+      end
+      object Button1: TButton
+        Left = 312
+        Height = 25
+        Top = 160
+        Width = 168
+        Caption = 'Generate random selection'
+        OnClick = Button1Click
+        TabOrder = 2
+      end
+      object PartSelection: TLabel
+        Left = 320
+        Height = 13
+        Top = 24
+        Width = 43
+        Caption = 'Selection'
+        ParentColor = False
+      end
+      object Button3: TButton
+        Left = 312
+        Height = 25
+        Top = 48
+        Width = 168
+        Caption = 'Generate particles'
+        OnClick = Button3Click
+        TabOrder = 3
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Simulate'
+      ClientHeight = 387
+      ClientWidth = 525
+      object AutoZoom: TCheckBox
+        Left = 16
+        Height = 17
+        Top = 104
+        Width = 71
+        Caption = 'Auto zoom'
+        OnChange = AutoZoomChange
+        TabOrder = 0
+      end
+      object Button2: TButton
+        Left = 168
+        Height = 25
+        Top = 42
+        Width = 205
+        Caption = 'Calc one step'
+        OnClick = Button2Click
+        TabOrder = 1
+      end
+      object LabelTime: TLabel
+        Left = 368
+        Height = 13
+        Top = 82
+        Width = 47
+        Caption = 'LabelTime'
+        ParentColor = False
+      end
+      object AutoCalc: TCheckBox
+        Left = 176
+        Height = 17
+        Top = 78
+        Width = 64
+        Caption = 'Auto calc'
+        TabOrder = 2
+      end
+      object LabelIteration: TLabel
+        Left = 290
+        Height = 13
+        Top = 82
+        Width = 16
+        Caption = '----'
+        ParentColor = False
+      end
+      object LabelTotalTime: TLabel
+        Left = 176
+        Height = 13
+        Top = 108
+        Width = 12
+        Caption = '---'
+        ParentColor = False
+      end
+      object NoEMCheck: TCheckBox
+        Left = 16
+        Height = 17
+        Top = 16
+        Width = 83
+        Caption = 'No EM forces'
+        OnChange = NoEMCheckChange
+        TabOrder = 3
+      end
+      object LinearCheck: TCheckBox
+        Left = 16
+        Height = 17
+        Top = 50
+        Width = 112
+        Caption = 'Linear interpolation'
+        OnChange = LinearCheckChange
+        TabOrder = 4
+      end
+      object AccuracyEdit: TLabeledEdit
+        Left = 175
+        Height = 21
+        Top = 152
+        Width = 80
+        EditLabel.AnchorSideTop.Control = AccuracyEdit
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = AccuracyEdit
+        EditLabel.AnchorSideBottom.Control = AccuracyEdit
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 86
+        EditLabel.Height = 13
+        EditLabel.Top = 156
+        EditLabel.Width = 86
+        EditLabel.Caption = 'Relative Accuracy'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        TabOrder = 5
+        Text = '0.1'
+      end
+      object StepMaxEdit: TLabeledEdit
+        Left = 175
+        Height = 21
+        Top = 192
+        Width = 80
+        EditLabel.AnchorSideTop.Control = StepMaxEdit
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = StepMaxEdit
+        EditLabel.AnchorSideBottom.Control = StepMaxEdit
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 105
+        EditLabel.Height = 13
+        EditLabel.Top = 196
+        EditLabel.Width = 67
+        EditLabel.Caption = 'Max time step'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        TabOrder = 6
+        Text = '0'
+        OnChange = StepMaxEditChange
+        OnExit = StepMaxEditExit
+      end
+      object StepMinEdit: TLabeledEdit
+        Left = 175
+        Height = 21
+        Top = 232
+        Width = 80
+        EditLabel.AnchorSideTop.Control = StepMinEdit
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = StepMinEdit
+        EditLabel.AnchorSideBottom.Control = StepMinEdit
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 109
+        EditLabel.Height = 13
+        EditLabel.Top = 236
+        EditLabel.Width = 63
+        EditLabel.Caption = 'Min time step'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        TabOrder = 7
+        Text = '0'
+      end
+      object MaxStepSecs: TComboBox
+        Left = 288
+        Height = 21
+        Top = 192
+        Width = 100
+        ItemHeight = 13
+        ItemIndex = 0
+        Items.Strings = (
+          'Microsecs'
+          'Secs'
+          'Days'
+          'Years'
+        )
+        Style = csDropDownList
+        TabOrder = 8
+        Text = 'Microsecs'
+      end
+      object MinStepSecs: TComboBox
+        Left = 288
+        Height = 21
+        Top = 232
+        Width = 100
+        ItemHeight = 13
+        ItemIndex = 0
+        Items.Strings = (
+          'Microsecs'
+          'Secs'
+          'Days'
+          'Years'
+        )
+        Style = csDropDownList
+        TabOrder = 9
+        Text = 'Microsecs'
+      end
+      object Button4: TButton
+        Left = 416
+        Height = 25
+        Top = 176
+        Width = 75
+        Caption = 'Apply'
+        OnClick = Button4Click
+        TabOrder = 10
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Statistics'
+    end
+  end
+  object IdleTimer1: TIdleTimer
+    Interval = 1
+    OnTimer = IdleTimer1Timer
+    left = 472
+    top = 8
+  end
+end

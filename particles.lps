@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="7">
+      <Unit0>
+        <Filename Value="particles.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="particles"/>
+        <UsageCount Value="200"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="partform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ParticleForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="partform"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="440"/>
+        <CursorPos X="28" Y="91"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="displayform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="displayform"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="176"/>
+        <CursorPos X="40" Y="181"/>
+        <UsageCount Value="210"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="vectors.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="vectors"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="73"/>
+        <CursorPos X="30" Y="91"/>
+        <UsageCount Value="197"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="particle.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="particle"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="197"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="partsystem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="partsystem"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="190"/>
+        <CursorPos X="41" Y="573"/>
+        <UsageCount Value="195"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="setupreader.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="setupreader"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="85"/>
+        <CursorPos X="68" Y="94"/>
+        <UsageCount Value="59"/>
+        <Loaded Value="True"/>
+      </Unit6>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="partform.pas"/>
+        <Caret Line="169" Column="1" TopLine="149"/>
+      </Position1>
+      <Position2>
+        <Filename Value="partform.pas"/>
+        <Caret Line="175" Column="1" TopLine="151"/>
+      </Position2>
+      <Position3>
+        <Filename Value="partform.pas"/>
+        <Caret Line="166" Column="1" TopLine="151"/>
+      </Position3>
+      <Position4>
+        <Filename Value="partform.pas"/>
+        <Caret Line="167" Column="1" TopLine="151"/>
+      </Position4>
+      <Position5>
+        <Filename Value="partform.pas"/>
+        <Caret Line="169" Column="1" TopLine="151"/>
+      </Position5>
+      <Position6>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="568" Column="5" TopLine="550"/>
+      </Position6>
+      <Position7>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="567" Column="1" TopLine="550"/>
+      </Position7>
+      <Position8>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="569" Column="1" TopLine="550"/>
+      </Position8>
+      <Position9>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="570" Column="1" TopLine="550"/>
+      </Position9>
+      <Position10>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="571" Column="1" TopLine="550"/>
+      </Position10>
+      <Position11>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="572" Column="1" TopLine="550"/>
+      </Position11>
+      <Position12>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="573" Column="1" TopLine="550"/>
+      </Position12>
+      <Position13>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="567" Column="1" TopLine="550"/>
+      </Position13>
+      <Position14>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="569" Column="1" TopLine="550"/>
+      </Position14>
+      <Position15>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="570" Column="1" TopLine="550"/>
+      </Position15>
+      <Position16>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="571" Column="1" TopLine="550"/>
+      </Position16>
+      <Position17>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="572" Column="1" TopLine="550"/>
+      </Position17>
+      <Position18>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="573" Column="1" TopLine="550"/>
+      </Position18>
+      <Position19>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="567" Column="1" TopLine="550"/>
+      </Position19>
+      <Position20>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="569" Column="1" TopLine="550"/>
+      </Position20>
+      <Position21>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="570" Column="1" TopLine="550"/>
+      </Position21>
+      <Position22>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="571" Column="1" TopLine="550"/>
+      </Position22>
+      <Position23>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="572" Column="1" TopLine="550"/>
+      </Position23>
+      <Position24>
+        <Filename Value="partsystem.pas"/>
+        <Caret Line="567" Column="1" TopLine="550"/>
+      </Position24>
+      <Position25>
+        <Filename Value="partform.pas"/>
+        <Caret Line="91" Column="28" TopLine="67"/>
+      </Position25>
+      <Position26>
+        <Filename Value="setupreader.pas"/>
+        <Caret Line="151" Column="52" TopLine="136"/>
+      </Position26>
+      <Position27>
+        <Filename Value="setupreader.pas"/>
+        <Caret Line="146" Column="28" TopLine="136"/>
+      </Position27>
+      <Position28>
+        <Filename Value="setupreader.pas"/>
+        <Caret Line="151" Column="1" TopLine="136"/>
+      </Position28>
+      <Position29>
+        <Filename Value="setupreader.pas"/>
+        <Caret Line="95" Column="45" TopLine="85"/>
+      </Position29>
+      <Position30>
+        <Filename Value="partform.pas"/>
+        <Caret Line="91" Column="28" TopLine="440"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="partsystem.pas"/>
+        <Line Value="578"/>
+      </Item1>
+    </BreakPoints>
+    <Watches Count="4">
+      <Item1>
+        <Expression Value="p.id"/>
+      </Item1>
+      <Item2>
+        <Expression Value="p.speed"/>
+      </Item2>
+      <Item3>
+        <Expression Value="color"/>
+      </Item3>
+      <Item4>
+        <Expression Value="p.color"/>
+        <DisplayStyle Value="wdfHex"/>
+      </Item4>
+    </Watches>
+  </Debugging>
+  <EditorMacros Count="0"/>
+</CONFIG>

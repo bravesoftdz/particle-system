@@ -1,0 +1,102 @@
+[Random]
+<Small>
+  Mass=5.1+-5
+  Size=0.1
+  Charge=0+-0.5
+  Speed=0
+  Pos=+-100
+<Large>
+  Mass=1000+-900
+  Size=20+-10
+  Charge=0+-1
+  Speed=0
+  Pos=+-100
+
+[Elements]
+<*Multiplier*>
+  Mass=1
+<Hydrogen>
+  Mass=1
+  Charge=0
+  Pos=+-100
+  Size=0.1
+<Hydrogen+1>
+  Mass=1
+  Charge=1
+  Pos=+-100
+  Size=0.2
+<Electron>
+  Mass=0.001
+  Charge=-1
+  Pas=+-100
+  Size=0.00001
+<Helium>
+  Mass=4
+  Charge=0
+  Pos=+-100
+
+<Lithium>
+
+<Iron>
+
+[Atomic particles]
+
+[Planets]
+<*Multiplier*>
+  Size=6.371E6
+  Mass=5.972E24
+  Pos=1.4960E11
+  Period=31557600
+<Sun>
+  Color=255,255,200
+  Size=109
+  Mass=332954
+  Pos=0
+<Mercury>
+  Color=128,255,255
+  Size=0.382
+  Mass=0.06
+  Pos=0.39+-0.8
+  Period=0.24
+<Venus>
+  Color=220,220,220
+  Size=0.949
+  Mass=0.82
+  Pos=0.72
+  Period=0.62
+<Earth>
+  Color=100,100,255
+  Size=1
+  Mass=1
+  Pos=1
+  Period=1
+<Mars>
+  Color=255,50,50
+  Size=0.532
+  Mass=0.11
+  Pos=1.52
+  Period=1.88
+<Jupiter>
+  Color=200,200,100
+  Size=11.209
+  Mass=317.8
+  Pos=5.20
+  Period=11.86
+<Saturn>
+  Color=120,100,150
+  Size=9.449
+  Mass=95.2
+  Pos=9.54
+  Period=84.01
+<Uranus>
+  Color=100,70,60
+  Size=4.007
+  Mass=14.6
+  Pos=19.22
+  Period=84.01
+<Neptune>
+  Color= 100,120,100
+  Size=3.883
+  Mass=17.2
+  Pos=30.06
+  Period=164.8

@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, partform, displayform, vectors, particle, partsystem, setupreader,
-  dbflaz, sdflaz, memdslaz
+  dbflaz, sdflaz, memdslaz, tachartlazaruspkg
   { you can add units after this };
 
 {$R *.res}

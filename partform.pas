@@ -5,37 +5,46 @@ unit partform;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ExtCtrls, ComCtrls, CheckLst, partSystem, setupreader;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
+  ComCtrls, CheckLst, partSystem, setupreader;
 
 type
 
   { TParticleForm }
 
   TParticleForm = class(TForm)
+    AccuracyEdit: TLabeledEdit;
     AutoCalc: TCheckBox;
     AutoZoom: TCheckBox;
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
-    AccuracyEdit: TLabeledEdit;
     Button4: TButton;
-    MaxStepSecs: TComboBox;
-    MinStepSecs: TComboBox;
-    StepMinEdit: TLabeledEdit;
-    StepMaxEdit: TLabeledEdit;
+    SelectedParticleMemo: TMemo;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
+    GroupBox4: TGroupBox;
+    GroupBox5: TGroupBox;
+    Label1: TLabel;
+    LabelIteration: TLabel;
+    LabelTime: TLabel;
+    LabelTotalTime: TLabel;
     LinearCheck: TCheckBox;
+    MaxStepSecs: TComboBox;
+    Memo1: TMemo;
+    GenerateMemo: TMemo;
+    MinStepSecs: TComboBox;
     NoEMCheck: TCheckBox;
     PartSelection: TLabel;
     ElementsList: TCheckListBox;
     EditCount: TEdit;
     Label2: TLabel;
-    LabelIteration: TLabel;
-    LabelTime: TLabel;
     IdleTimer1: TIdleTimer;
-    LabelTotalTime: TLabel;
     PageControl1: TPageControl;
     Cathegories: TTabControl;
+    StepMaxEdit: TLabeledEdit;
+    StepMinEdit: TLabeledEdit;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
@@ -45,6 +54,9 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure EditTimeChange(Sender: TObject);
+    procedure ElementsListClick(Sender: TObject);
+    procedure ElementsListItemClick(Sender: TObject; Index: integer);
+    procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure LinearCheckChange(Sender: TObject);
     procedure NoEMCheckChange(Sender: TObject);
@@ -123,21 +135,34 @@ begin
 end;
 
 procedure TParticleForm.Button1Click(Sender: TObject);
-var i:integer; p:Particle;
+var i,x:integer; p:Particle;
     count:integer; cath:SetupCath; el:SetupElement;
 begin
   // generate random selection:
+  GenerateMemo.lines.text:= '----';
   ClearParticles;
   count:= StrToInt(EditCount.text);
   particleList.Capacity:=count;
   i:= Cathegories.TabIndex;
   if i<0 then EXIT;
   cath:= SetupCath(Setup.Cathegories[i]);
+  GenerateMemo.lines.text:= 'Generating '+IntToStr(count)+' particles.';
   for i:= 0 to count do
   begin
     el:= cath.PickRandomElement;
     p:= el.GenerateParticle(cath.multiplier);
     particleList.add(p);
+  end;
+  for i:= 0 to cath.elements.count-1 do
+  begin
+    count:= 0;
+    el:= SetupElement(cath.elements[i]);
+    for x:= 0 to particleList.count-1 do
+    begin
+      p:= Particle(particleList[x]);
+      if p.id= el.name then count:= count+1;
+    end;
+    GenerateMemo.lines.add(IntToStr(count)+' x '+el.name);
   end;
   SetupView;
 end;
@@ -242,11 +267,16 @@ procedure TParticleForm.Button3Click(Sender: TObject);
 begin
   ClearParticles;
   i:= Cathegories.TabIndex;
-  if i<0 then EXIT;
+  if i<0 then begin
+      GenerateMemo.lines.text:= 'No cathegory found'#10'Select tab on the left'#10+
+        'Check the setupdata.txt file if there are no items present';
+      EXIT;
+    end;
   cath:= SetupCath(Setup.Cathegories[i]);
   multi:= cath.multiplier;
   sum:= 0;
   i:=0;
+  GenerateMemo.lines.text:= 'Generating particles:';
   while i<cath.elements.count do
   begin
     el:= SetupElement(cath.elements[i]);
@@ -258,12 +288,12 @@ begin
     end
     else
     begin
+      GenerateMemo.lines.add(IntToStr(Round(sum))+' x '+el.name);
       i:= i+1;
       sum:= 0;
     end;
   end;
   SetupView;
-
 end;
 procedure TParticleForm.Button4Click(Sender: TObject);
   function ListToSecs(edit:TLabeledEdit;listIx:integer):double;
@@ -296,6 +326,39 @@ end;
 procedure TParticleForm.EditTimeChange(Sender: TObject);
 begin
 
+end;
+
+procedure TParticleForm.ElementsListClick(Sender: TObject);
+begin
+  ElementsListItemClick(nil,-1);
+end;
+
+procedure TParticleForm.ElementsListItemClick(Sender: TObject; Index: integer);
+var el:SetupElement;
+  function ToStr(value,valueVar:double):string;
+  var s:string;
+  begin
+    s:= '';
+    if valueVar<>0 then s:= '+-'+FloatToStr(valueVar);
+    result:= FloatToStr(value)+s;
+  end;
+begin
+  SelectedParticleMemo.lines.text:= '';
+  if ElementsList.ItemIndex>=0 then
+  begin
+    el:= SetupElement(ElementsList.items.Objects[ElementsList.itemIndex]);
+    SelectedParticleMemo.lines.Add(el.name);
+    SelectedParticleMemo.lines.add('Mass='+ToStr(el.mass,el.massVar));
+    SelectedParticleMemo.lines.add('Charge='+ToStr(el.charge,el.chargeVar));
+  end;
+end;
+
+procedure TParticleForm.FormActivate(Sender: TObject);
+begin
+  if (particleList=nil)or(particleList.count=0) then
+  begin
+    PageControl1.TabIndex:=0;
+  end;
 end;
 
 function GetFullPath(s:string):string;

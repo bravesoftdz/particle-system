@@ -196,6 +196,7 @@ begin
   if totalAmount>=1 then
   begin
     pick:= totalAmount*random;
+    sum:= 0;
     for i:= 0 to self.elements.count-1 do
       begin
         el:= SetupElement(elements[i]);
